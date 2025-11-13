@@ -8,7 +8,8 @@
     <!-- 
       CSS ทั้งหมดถูกรวมไว้ที่นี่แล้ว
       (นี่คือดีไซน์ V2 ที่เราคุยกันครับ)
-    --><style>
+    -->
+    <style>
         /* ==== CSS Version 2: Professional Upgrade ==== */
 
         /* --- 1. การตั้งค่าโดยรวม (Global Settings) --- */
@@ -166,56 +167,208 @@
             display: table;
             clear: both;
         }
+        
+        /* --- 12. Responsive Design for Mobile --- */
+        @media (max-width: 768px) {
+            .profile-image {
+                float: none; /* ยกเลิกการลอย */
+                display: block; /* ทำให้เป็น block element */
+                margin: 0 auto 20px auto; /* จัดกึ่งกลาง และเว้นระยะล่าง */
+                width: 150px;
+                height: 150px;
+                margin-top: 0; /* รีเซ็ต margin-top */
+                margin-right: auto; /* รีเซ็ต margin-right */
+            }
+
+            h1 {
+                text-align: center; /* จัด h1 กึ่งกลาง */
+            }
+            
+            nav {
+                top: 0; /* ทำให้เมนูติดขอบบนสุด */
+                border-radius: 0; /* เอามุมโค้งออก */
+                display: flex;
+                flex-wrap: wrap; /* ทำให้ลิงก์ตัดบรรทัดได้ */
+                justify-content: center; /* จัดกึ่งกลาง */
+                padding: 10px;
+            }
+            
+            nav a {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+            
+            section {
+                padding: 20px;
+                scroll-margin-top: 120px; /* เพิ่มระยะห่างสำหรับเมนูที่อาจมี 2 แถว */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                 /* ทำให้ปุ่มเมนูเล็กลงอีก */
+                padding: 6px 8px;
+                font-size: 0.85em;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+
+        /* --- 13. Print Button Style (Added) --- */
+        .print-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #0056b3; /* สีเดียวกับธีม */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        .print-button:hover {
+            background-color: #004a99; /* สีเข้มขึ้นเมื่อ hover */
+        }
+
+        /* --- 14. Print-Friendly Styles (Added) --- */
+        @media print {
+            /* ซ่อนองค์ประกอบที่ไม่จำเป็นบนหน้ากระดาษ */
+            nav,
+            footer,
+            .print-button, /* ซ่อนปุ่มพิมพ์เอง */
+            #projects .project-card p a, /* ซ่อนลิงก์ Source Code */
+            #contact ul /* ซ่อนรายการติดต่อ (Email/Phone/GitHub) */
+             {
+                display: none !important; /* ใช้ !important เพื่อความแน่นอน */
+            }
+            
+            /* เพิ่มข้อความบอกให้ดูออนไลน์สำหรับข้อมูลติดต่อ */
+            #contact p:after {
+                content: " (กรุณาดูอีเมลและลิงก์จากเวอร์ชันออนไลน์)";
+                font-style: italic;
+                font-size: 0.9em;
+            }
+
+            /* ตั้งค่า body สำหรับการพิมพ์ */
+            body {
+                background-color: #ffffff;
+                color: #000;
+                font-size: 11pt; /* ใช้ pt สำหรับการพิมพ์ */
+                line-height: 1.3;
+                margin: 1.5cm; /* เพิ่มขอบกระดาษ */
+            }
+
+            /* ขยาย container ให้เต็มความกว้าง */
+            .container {
+                max-width: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* ลบเงาและเส้นขอบที่ไม่จำเป็น */
+            section {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                margin-bottom: 20px;
+                border-radius: 0;
+                page-break-inside: avoid; /* พยายามไม่ให้ section ถูกตัดแบ่งหน้า */
+            }
+
+            /* ทำให้หัวข้อทั้งหมดเป็นสีดำ */
+            h1, h2, h3, h4 {
+                color: #000;
+                page-break-after: avoid; /* ไม่ให้ขึ้นหน้าใหม่หลังหัวข้อ */
+            }
+            
+            h1 { border-color: #333; }
+            h2 { border-color: #aaa; }
+            .skill-category h3 { border-color: #333; }
+
+            /* จัดการรูปโปรไฟล์ในการพิมพ์ */
+            .profile-image {
+                float: right;
+                width: 140px;
+                height: 140px;
+                margin-top: -15px;
+                border-color: #000;
+                box-shadow: none;
+            }
+            
+            /* ทำให้ข้อความและสัญลักษณ์เป็นสีดำ */
+            p, li, strong {
+                color: #000;
+            }
+            
+            .skill-list li::before {
+                color: #000; /* เครื่องหมายติ๊กถูกสีดำ */
+            }
+        }
 
     </style>
 </head>
 <body>
 
-    <!-- เมนูนำทาง (เวอร์ชันสมบูรณ์) --><nav>
+    <!-- เมนูนำทาง (เวอร์ชันสมบูรณ์) -->
+    <nav>
         <a href="#home">หน้าแรก</a>
-        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#about">การศึกษา</a>                
         <a href="#experience">ประสบการณ์</a>
         <a href="#skills">ทักษะ</a>
         <a href="#projects">ผลงาน</a>
         <a href="#contact">ติดต่อ</a>
+        <a href="#references">บุคคลอ้างอิง</a> <!-- (เพิ่มลิงก์นี้) -->
     </nav>
 
-    <!-- เราจะใช้ .container ครอบเนื้อหาทั้งหมด --><div class="container">
+    <!-- เราจะใช้ .container ครอบเนื้อหาทั้งหมด -->
+    <div class="container">
 
-        <!-- ======== 1. HOME (Hero Section) ======== --><section id="home">
+        <!-- ======== 1. HOME (Hero Section) ======== -->
+        <section id="home">
             <header>
                 <div class="header-content">
-                    <img src="https://raw.githubusercontent.com/infochuchat-dev/chuchatbun.github.io/main/Gemini_Generated_Image_iyxy7qiyxy7qiyxy.png" alt="รูปภาพโปรไฟล์ชูชาติ บุญแก้วศรี" class="profile-image">
+                    <img src="https://raw.githubusercontent.com/infochuchat-dev/chuchatbun.github.io/main/Gemini_Generated_Image_iyxy7qiyxy7qiyxy.png" alt="รูปภาพโปรไฟล์ชูชาติ บุญแก้วศรี" class="profile-image" 
+                         onerror="this.src='https://placehold.co/180x180/004a99/FFFFFF?text=CB'; this.onerror=null;">
                     <h1>ชูชาติ บุญแก้วศรี (Chuchat Bunkeawsri)</h1>
-                    <h2>สรุปประสบการณ์ (Professional Summary)</h2>
+                    <h2>เกี่ยวกับฉัน (About Me)</h2>
                     <p>
-                        ผู้เชี่ยวชาญด้านการบริหารโครงการและจัดหาสถานที่ (Project Management & Site Acquisition) ที่มีประสบการณ์กว่า 7 ปีในอุตสาหกรรมโทรคมนาคมและเทคโนโลยีสารสนเทศ 
-                        เชี่ยวชาญในการเจรจาต่อรอง, การประสานงานกับหน่วยงานราชการ, และการบริหารโครงการ 3G/4G ผสานทักษะด้านการขายเชิงเทคนิค (Technical Sales) ที่สร้างยอดขายรวมกว่า 44.73 ล้านบาท 
-                        พร้อมด้วยวุฒิปริญญาโทด้านเทคโนโลยีสารสนเทศ มุ่งมั่นในการนำความรู้และประสบการณ์มาขับเคลื่อนโครงการให้สำเร็จลุล่วงอย่างมีประสิทธิภาพ
+                        ผมมีประสบการณ์ด้านการขายคอมพิวเตอร์และอุปกรณ์ IT ที่สร้างยอดขายรวมกว่า 45 ล้านบาท พร้อมด้วยวุฒิปริญญาโทด้านเทคโนโลยีสารสนเทศ รวมถึงการดูแลโครงการ Site Acquisition, Civil Work และ 3G/4G Integration มากกว่า 50 โครงการ มีทักษะในการบริหารงบประมาณ ทีมวิศวกร และผู้รับเหมา พร้อมทั้งสามารถประสานงานกับชุมชนในพื้นที่ได้อย่างราบรื่น
+                    </p>
+                      <h2>เป้าหมายอาชีพ</h2>
+                    <p>
+                        มุ่งมั่นในพัฒนาตนเองในวายงานเทคโนโลยีสารสนเทศ และบริหารโครงการ เพื่อนำประสบการณ์ด้านการขายอุปกรณ์ IT และการจัดการโครงการโทรคมนาคมมาประยุกต์ใช้ในการพัฒนาธุรกิจและสร้างความพึงพอใจให้กับลูกค้า พร้อมต่อยอดสู่ตำแหน่งที่สูงขึ้น
                     </p>
                 </div>
             </header>
         </section>
         
-        <!-- ======== 2. ABOUT ME ======== --><section id="about">
-            <h2>เกี่ยวกับฉัน (About Me)</h2>
-            <h3>เป้าหมายอาชีพ</h3>
-            <p>
-                ด้วยประสบการณ์กว่า 7 ปีในงานบริหารโครงการและ Site Acquisition ในอุตสาหกรรมโทรคมนาคม ผมได้เห็นถึงความสำคัญของเทคโนโลยีที่เปลี่ยนแปลงการทำงานอยู่เสมอ 
-                ผมจึงตัดสินใจเรียนต่อปริญญาโทด้านเทคโนโลยีสารสนเทศ (IT) เพื่อเพิ่มพูนทักษะด้านการวิเคราะห์ข้อมูล, Python, และความปลอดภัยทางไซเบอร์ 
-                ตอนนี้ผมพร้อมที่จะผสานประสบการณ์ภาคสนามที่แข็งแกร่ง เข้ากับทักษะทางเทคนิคที่ทันสมัย เพื่อขับเคลื่อนโครงการให้สำเร็จอย่างมีประสิทธิภาพสูงสุด
-            </p>
+        <!-- ======== 2. ABOUT ME ======== -->
+        <section id="about">
+            <div class="header-content">
+                <h2>การศึกษาและวุฒิการศึกษา (Education & Qualifications)</h2>
             <h3>การศึกษา (Education)</h3>
-            <h4>ระดับปริญญาตรี </h4>
-            <p>บริหารธุรกิจบัณฑิต สาขาการจัดการ มหาวิทยาลัยราชภัฏนครศรีธรรมราช</p>
-            <p>2553 - 2557</p>
-            <h4>ระดับปริญญาโท </h4>
-            <p>วิทยาศาสตรมหาบัณฑิต สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยธุรกิจบัณฑิตย์</p>
-            <p>2566 - 2568</p>
-    
+                     <h4>ระดับปริญญาตรี </h4>
+                        <p>บริหารธุรกิจบัณฑิต สาขาการจัดการ มหาวิทยาลัยราชภัฏนครศรีธรรมราช</p>
+                        <p>2553 - 2557</p>
+                        <h4>ระดับปริญญาโท </h4>
+                        <p>วิทยาศาสตรมหาบัณฑิต สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยธุรกิจบัณฑิตย์</p>
+                        <p>2566 - 2568</p>
+                </div>
         </section>
 
-        <!-- ======== 3. EXPERIENCE ======== --><section id="experience">
+        <!-- ======== 3. EXPERIENCE ======== -->
+        <section id="experience">
             <h2>ประสบการณ์การทำงาน (Work Experience)</h2>
             
             <div class="job-card">
@@ -249,7 +402,8 @@
             </div>
         </section>
 
-        <!-- ======== 4. SKILLS ======== --><section id="skills" class="skill-category">
+        <!-- ======== 4. SKILLS ======== -->
+        <section id="skills" class="skill-category">
             <h2>ทักษะและความสามารถ (Skills)</h2>
             
             <h3>Hard Skills (ทักษะทางเทคนิค)</h3>
@@ -272,50 +426,58 @@
             </ul>
         </section>
 
-        <!-- ======== 5. PROJECTS ======== --><section id="projects">
-            <h2>ผลงาน (Projects)</h2>
-            <p>นี่คือโปรเจกต์ที่ผมสร้างขึ้นเพื่อพิสูจน์ทักษะทางเทคโนโลยีที่ได้เรียนมา</p>
+        <!-- ======== 5. PROJECTS (Updated as per your request) ======== -->
+        <section id="projects">
+            <h2>ผลงานและโครงการสำคัญ (Projects & Achievements)</h2>
+            <p>นี่คือตัวอย่างผลงานและความสำเร็จสำคัญที่ผ่านมา:</p>
             
-            <div class="project-card">
-                <h3>Project 1: การวิเคราะห์ข้อมูลยอดขาย 44 ล้านบาท (Sales Data Analysis)</h3>
-                <p>
-                    ใช้ข้อมูลยอดขายจริง (จากไฟล์ Excel) กว่า 203 รายการ มาวิเคราะห์ด้วยภาษา Python 
-                    (โดยใช้ไลบรารี Pandas และ Matplotlib) เพื่อค้นหาแนวโน้มยอดขายรายปี, 
-                    ลูกค้ารายสำคัญ, และประเภทสินค้าที่ขายดีที่สุด
-                </p>
-                <p><strong>ทักษะที่พิสูจน์:</strong> Python, Pandas (Data Analysis), Matplotlib (Data Visualization)</p>
-                <!-- 
-                  หมายเหตุ: ในอนาคต เมื่อคุณอัปโหลดโค้ด Python ขึ้น GitHub 
-                  เราจะสร้างลิงก์ "ดูโค้ดบน GitHub" ตรงนี้ครับ
-                --></div>
-
-            <div class="project-card">
-                <h3>Project 2: เว็บไซต์พอร์ตโฟลิโอนี้ (This Portfolio Website)</h3>
-                <p>
-                    เว็บไซต์นี้สร้างขึ้นด้วยตัวเองทั้งหมดโดยไม่ใช้ Template สำเร็จรูป 
-                    เพื่อพิสูจน์ทักษะการพัฒนาเว็บขั้นพื้นฐาน (Front-End) 
-                    และบริหารจัดการโค้ดด้วย Git และ GitHub
-                </p>
-                <p><strong>ทักษะที่พิสูจน์:</strong> HTML5, CSS3, Git, GitHub Pages</p>
-                <p>
-                    <a href="https://github.com/infochuchat-dev/chuchatbun.github.io" target="_blank">
-                        คลิกที่นี่เพื่อดู Source Code ทั้งหมดบน GitHub
-                    </a>
-                </p>
-            </div>
+            <!-- 
+                ใช้สไตล์ .skill-list เพื่อให้มี '✓' นำหน้า 
+                และมีดีไซน์สอดคล้องกับส่วน Skills 
+            -->
+            <ul class="skill-list">
+                <li>ปิดยอดขายรวมมากกว่า <strong>40 ล้านบาท</strong> ระหว่างปี 2019–2025</li>
+                <li>ปิดการขายโครงการ IT มูลค่าสูงกว่า <strong>13 ล้านบาท</strong> ในปี 2021</li>
+                <li>ดูแลลูกค้าสำคัญ เช่น โรงพยาบาลสมเด็จพระสังฆราช, วัดพระธรรมกาย, อบต.ไทรใหญ่</li>
+                <li>บริหารและติดตั้งโครงการ IT มากกว่า <strong>200 โครงการ</strong> ครอบคลุมอุปกรณ์คอมพิวเตอร์ ระบบเครือข่าย และ Smart Display</li>
+                <li>ผ่านการพัฒนาโครงงานสารนิพนธ์: “การประยุกต์ใช้เทคโนโลยี Low-Code เพื่อการติดตามสถานะงานในองค์กรผ่าน AppSheet”</li>
+                <li>เพิ่มยอดขายให้บริษัทได้มากกว่า <strong>500%</strong> ภายใน 2 ปีแรก</li>
+            </ul>
         </section>
 
-        <!-- ======== 6. CONTACT ======== --><section id="contact" class="contact-links">
+        <!-- ======== 6. CONTACT ======== -->
+        <section id="contact" class="contact-links">
             <h2>ติดต่อ (Contact)</h2>
             <p>คุณสามารถติดต่อผมได้ผ่านช่องทางด้านล่างนี้</p>
             <ul>
                 <li><strong>Email:</strong> <a href="mailto:Chuchat_b@outlook.co.th">Chuchat_b@outlook.co.th</a></li>
                 <li><strong>Phone:</strong> 083-507-XXXX (กรุณาติดต่อผ่านอีเมลก่อน)</li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/infochuchat-dev" target="_blank">infochuchat-dev</a></li>
-                <!-- <li><strong>LinkedIn:</strong> <a href="[ลิงก์ LinkedIn]" target="_blank">(โปรไฟล์ LinkedIn)</a></li> --></ul>
+                <!-- <li><strong>LinkedIn:</strong> <a href="[ลิงก์ LinkedIn]" target="_blank">(โปรไฟล์ LinkedIn)</a></li> -->
+            </ul>
         </section>
 
-    </div> <!-- ปิด .container --><!-- ======== FOOTER ======== --><footer>
+        <!-- ======== 7. REFERENCES (Added) ======== -->
+        <section id="references">
+            <h2>บุคคลอ้างอิง (References)</h2>
+            <div class="reference-card">
+                <p><strong>นายอภิเชษฐ อาการส</strong></p>
+                <p>ผู้จัดการฝ่ายบริหารพื้นที่ติดตั้งอุปกรณ์โทรคมนาคม</p>
+                <p>บริษัท ทรู คอร์ปอเรชั่น จำกัด (มหาชน)</p>
+                <p>โทรศัพท์: 081-710-6516</p>
+            </div>
+        </section>
+
+    </div> <!-- ปิด .container -->
+
+    <!-- ======== PRINT BUTTON (Added) ======== -->
+    <div class="container">
+        <button onclick="window.print()" class="print-button">
+            พิมพ์ (Print this Page)
+        </button>
+    </div>
+
+    <!-- ======== FOOTER ======== -->
+    <footer>
         <p>© 2025 ชูชาติ บุญแก้วศรี | สร้างสรรค์ด้วยความมุ่งมั่น</p>
     </footer>
 
