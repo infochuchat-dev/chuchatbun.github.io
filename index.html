@@ -8,8 +8,7 @@
     <!-- 
       CSS ทั้งหมดถูกรวมไว้ที่นี่แล้ว
       (นี่คือดีไซน์ V2 ที่เราคุยกันครับ)
-    -->
-    <style>
+    --><style>
         /* ==== CSS Version 2: Professional Upgrade ==== */
 
         /* --- 1. การตั้งค่าโดยรวม (Global Settings) --- */
@@ -146,12 +145,30 @@
             text-align: justify;
         }
 
+        /* --- 11. รูปภาพโปรไฟล์ (Profile Image) --- */
+        .profile-image {
+            width: 150px; /* กำหนดขนาดของรูป */
+            height: 150px;
+            border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
+            object-fit: cover; /* ครอบคลุมพื้นที่โดยไม่บิดเบี้ยว */
+            float: right; /* ทำให้รูปภาพลอยไปทางขวา */
+            margin-left: 20px; /* เว้นระยะห่างจากข้อความด้านซ้าย */
+            border: 4px solid #0056b3; /* เพิ่มกรอบสีน้ำเงิน */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูมีมิติ */
+        }
+
+        /* Clearfix สำหรับจัดการการลอยของรูปภาพ */
+        .header-content::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- เมนูนำทาง (เวอร์ชันสมบูรณ์) -->
-    <nav>
+    <!-- เมนูนำทาง (เวอร์ชันสมบูรณ์) --><nav>
         <a href="#home">หน้าแรก</a>
         <a href="#about">เกี่ยวกับฉัน</a>
         <a href="#experience">ประสบการณ์</a>
@@ -160,24 +177,24 @@
         <a href="#contact">ติดต่อ</a>
     </nav>
 
-    <!-- เราจะใช้ .container ครอบเนื้อหาทั้งหมด -->
-    <div class="container">
+    <!-- เราจะใช้ .container ครอบเนื้อหาทั้งหมด --><div class="container">
 
-        <!-- ======== 1. HOME (Hero Section) ======== -->
-        <section id="home">
+        <!-- ======== 1. HOME (Hero Section) ======== --><section id="home">
             <header>
-                <h1>ชูชาติ บุญแก้วศรี (Chuchat Bunkeawsri)</h1>
-                <h2>สรุปประสบการณ์ (Professional Summary)</h2>
-                <p>
-                    ผู้เชี่ยวชาญด้านการบริหารโครงการและจัดหาสถานที่ (Project Management & Site Acquisition) ที่มีประสบการณ์กว่า 7 ปีในอุตสาหกรรมโทรคมนาคมและเทคโนโลยีสารสนเทศ 
-                    เชี่ยวชาญในการเจรจาต่อรอง, การประสานงานกับหน่วยงานราชการ, และการบริหารโครงการ 3G/4G ผสานทักษะด้านการขายเชิงเทคนิค (Technical Sales) ที่สร้างยอดขายรวมกว่า 44.73 ล้านบาท 
-                    พร้อมด้วยวุฒิปริญญาโทด้านเทคโนโลยีสารสนเทศ มุ่งมั่นในการนำความรู้และประสบการณ์มาขับเคลื่อนโครงการให้สำเร็จลุล่วงอย่างมีประสิทธิภาพ
-                </p>
+                <div class="header-content">
+                    <img src="https://via.placeholder.com/150/0056b3/ffffff?text=Your+Photo" alt="รูปภาพโปรไฟล์ชูชาติ บุญแก้วศรี" class="profile-image">
+                    <h1>ชูชาติ บุญแก้วศรี (Chuchat Bunkeawsri)</h1>
+                    <h2>สรุปประสบการณ์ (Professional Summary)</h2>
+                    <p>
+                        ผู้เชี่ยวชาญด้านการบริหารโครงการและจัดหาสถานที่ (Project Management & Site Acquisition) ที่มีประสบการณ์กว่า 7 ปีในอุตสาหกรรมโทรคมนาคมและเทคโนโลยีสารสนเทศ 
+                        เชี่ยวชาญในการเจรจาต่อรอง, การประสานงานกับหน่วยงานราชการ, และการบริหารโครงการ 3G/4G ผสานทักษะด้านการขายเชิงเทคนิค (Technical Sales) ที่สร้างยอดขายรวมกว่า 44.73 ล้านบาท 
+                        พร้อมด้วยวุฒิปริญญาโทด้านเทคโนโลยีสารสนเทศ มุ่งมั่นในการนำความรู้และประสบการณ์มาขับเคลื่อนโครงการให้สำเร็จลุล่วงอย่างมีประสิทธิภาพ
+                    </p>
+                </div>
             </header>
         </section>
         
-        <!-- ======== 2. ABOUT ME ======== -->
-        <section id="about">
+        <!-- ======== 2. ABOUT ME ======== --><section id="about">
             <h2>เกี่ยวกับฉัน (About Me)</h2>
             <h3>เป้าหมายอาชีพ</h3>
             <p>
@@ -192,15 +209,14 @@
             <h4>ระดับปริญญาโท </h4>
             <p>วิทยาศาสตรมหาบัณฑิต สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยธุรกิจบัณฑิตย์</p>
             <p>2566 - 2568</p>
-  
+    
         </section>
 
-        <!-- ======== 3. EXPERIENCE ======== -->
-        <section id="experience">
+        <!-- ======== 3. EXPERIENCE ======== --><section id="experience">
             <h2>ประสบการณ์การทำงาน (Work Experience)</h2>
             
             <div class="job-card">
-                <h4>SSales Executive | บริษัท จ๊อบ เอ็นเตอร์ไพรส์ จำกัด</h4>
+                <h4>Sales Executive | บริษัท จ๊อบ เอ็นเตอร์ไพรส์ จำกัด</h4>
                 <p><em>(สิงหาคม 2562 - ปัจจุบัน)</em></p>
                 <ul>
                     <li>สร้างยอดขายรวม <strong>44.73 ล้านบาท</strong> จากการบริหารโครงการขายสินค้า IT (ข้อมูลปี 2019-2025)</li>
@@ -230,8 +246,7 @@
             </div>
         </section>
 
-        <!-- ======== 4. SKILLS ======== -->
-        <section id="skills" class="skill-category">
+        <!-- ======== 4. SKILLS ======== --><section id="skills" class="skill-category">
             <h2>ทักษะและความสามารถ (Skills)</h2>
             
             <h3>Hard Skills (ทักษะทางเทคนิค)</h3>
@@ -254,8 +269,7 @@
             </ul>
         </section>
 
-        <!-- ======== 5. PROJECTS ======== -->
-        <section id="projects">
+        <!-- ======== 5. PROJECTS ======== --><section id="projects">
             <h2>ผลงาน (Projects)</h2>
             <p>นี่คือโปรเจกต์ที่ผมสร้างขึ้นเพื่อพิสูจน์ทักษะทางเทคโนโลยีที่ได้เรียนมา</p>
             
@@ -270,8 +284,7 @@
                 <!-- 
                   หมายเหตุ: ในอนาคต เมื่อคุณอัปโหลดโค้ด Python ขึ้น GitHub 
                   เราจะสร้างลิงก์ "ดูโค้ดบน GitHub" ตรงนี้ครับ
-                -->
-            </div>
+                --></div>
 
             <div class="project-card">
                 <h3>Project 2: เว็บไซต์พอร์ตโฟลิโอนี้ (This Portfolio Website)</h3>
@@ -289,22 +302,17 @@
             </div>
         </section>
 
-        <!-- ======== 6. CONTACT ======== -->
-        <section id="contact" class="contact-links">
+        <!-- ======== 6. CONTACT ======== --><section id="contact" class="contact-links">
             <h2>ติดต่อ (Contact)</h2>
             <p>คุณสามารถติดต่อผมได้ผ่านช่องทางด้านล่างนี้</p>
             <ul>
                 <li><strong>Email:</strong> <a href="mailto:Chuchat_b@outlook.co.th">Chuchat_b@outlook.co.th</a></li>
                 <li><strong>Phone:</strong> 083-507-XXXX (กรุณาติดต่อผ่านอีเมลก่อน)</li>
                 <li><strong>GitHub:</strong> <a href="https://github.com/infochuchat-dev" target="_blank">infochuchat-dev</a></li>
-                <!-- <li><strong>LinkedIn:</strong> <a href="[ลิงก์ LinkedIn]" target="_blank">(โปรไฟล์ LinkedIn)</a></li> -->
-            </ul>
+                <!-- <li><strong>LinkedIn:</strong> <a href="[ลิงก์ LinkedIn]" target="_blank">(โปรไฟล์ LinkedIn)</a></li> --></ul>
         </section>
 
-    </div> <!-- ปิด .container -->
-
-    <!-- ======== FOOTER ======== -->
-    <footer>
+    </div> <!-- ปิด .container --><!-- ======== FOOTER ======== --><footer>
         <p>© 2025 ชูชาติ บุญแก้วศรี | สร้างสรรค์ด้วยความมุ่งมั่น</p>
     </footer>
 
