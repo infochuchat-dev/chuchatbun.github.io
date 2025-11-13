@@ -49,3 +49,24 @@ nav a:hover {
     color: #0056b3; /* สีเดียวกับ h1 */
     margin-top: 0;
 }
+/*
+ * สไตล์สำหรับหน้าทักษะ (Skills)
+ */
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h2 {
+    border-bottom: 2px solid #0056b3; /* เส้นใต้หัวข้อสีน้ำเงิน */
+    padding-bottom: 5px;
+}
+
+.skill-list {
+    list-style-type: disc; /* ใช้หัวข้อยแบบวงกลมทึบ */
+    padding-left: 20px;
+}
+
+.skill-list li {
+    margin-bottom: 8px; /* เว้นระยะห่างระหว่างทักษะ */
+    font-size: 1.1em;
+}
