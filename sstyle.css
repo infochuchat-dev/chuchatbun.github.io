@@ -1,27 +1,45 @@
+/* ==== CSS Version 2: Professional Upgrade ==== */
+
+/* --- 1. การตั้งค่าโดยรวม (Global Settings) --- */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    max-width: 800px;
+    font-family: 'Arial', 'Helvetica', 'Noto Sans Thai', sans-serif;
+    line-height: 1.7;
+    background-color: #f7f9fc; /* สีพื้นหลังเทาอ่อนๆ ที่ดูสะอาดตา */
+    color: #333;              /* สีตัวหนังสือหลัก (ไม่ดำสนิท จะอ่านง่ายกว่า) */
+    margin: 0;                 /* ลบระยะขอบเริ่มต้น */
+    padding: 0;                /* ลบระยะขอบเริ่มต้น */
+}
+
+/* --- 2. การจัดเลย์เอาต์หลัก (Main Container) --- */
+.container {
+    max-width: 900px;
     margin: 20px auto;
     padding: 0 20px;
 }
 
+/* --- 3. การตั้งค่าหัวข้อ (Headings) --- */
+h1, h2, h3 {
+    color: #004a99; /* สีน้ำเงินเข้ม (โทนใหม่) */
+}
+
 h1 {
-    color: #0056b3; /* สีน้ำเงินเข้ม */
+    border-bottom: 3px solid #0056b3;
+    padding-bottom: 10px;
 }
 
 h2 {
-    color: #444; /* สีเทาเข้ม */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
 }
-/*
- * สไตล์สำหรับเมนูนำทาง (Navigation)
- */
+
+/* --- 4. เมนูนำทาง (Navigation V2) --- */
 nav {
-    background-color: #f4f4f4;
-    padding: 10px;
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    border-radius: 8px;
+    margin-bottom: 25px;
+    padding: 15px 20px;
     text-align: center;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* เพิ่มเงาให้เมนูดู "ลอย" ขึ้นมา */
 }
 
 nav a {
@@ -29,60 +47,63 @@ nav a {
     color: #0056b3;
     font-weight: bold;
     padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* เพิ่ม Animation ตอนเอาเมาส์ชี้ */
 }
 
 nav a:hover {
-    background-color: #ddd;
-}
-/*
- * สไตล์สำหรับหน้าผลงาน (Projects)
- */
-.project-card {
-    background-color: #f9f9f9; /* สีพื้นหลังเทาอ่อน */
-    border: 1px solid #ddd;     /* เส้นขอบเทา */
-    border-radius: 8px;       /* ทำให้ขอบมน */
-    padding: 20px;
-    margin-bottom: 20px;      /* เว้นระยะห่างระหว่างโปรเจกต์ */
+    background-color: #e6f0ff; /* สีพื้นหลังฟ้าอ่อนๆ ตอนชี้ */
 }
 
-.project-card h3 {
-    color: #0056b3; /* สีเดียวกับ h1 */
-    margin-top: 0;
-}
-/*
- * สไตล์สำหรับหน้าทักษะ (Skills)
- */
-.skill-category {
+/* --- 5. สไตล์การ์ด (สำหรับ Projects, Skills, etc.) --- */
+section {
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    border-radius: 8px;
+    padding: 25px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* เพิ่มเงาให้ดู "ลอย" */
 }
 
-.skill-category h2 {
-    border-bottom: 2px solid #0056b3; /* เส้นใต้หัวข้อสีน้ำเงิน */
-    padding-bottom: 5px;
+.project-card, .skill-category, .contact-links {
+    background-color: #ffffff; /* ใช้พื้นหลังขาวสำหรับทุกส่วน */
+    border: none; /* ไม่ต้องใช้เส้นขอบแล้ว */
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.skill-list {
-    list-style-type: disc; /* ใช้หัวข้อยแบบวงกลมทึบ */
-    padding-left: 20px;
-}
-
-.skill-list li {
-    margin-bottom: 8px; /* เว้นระยะห่างระหว่างทักษะ */
-    font-size: 1.1em;
-}
-/*
- * สไตล์สำหรับหน้าติดต่อ (Contact)
- */
-.contact-links ul {
-    list-style-type: none; /* เอาหัวข้อยวงกลมออก */
+/* --- 6. รายการ (Lists) --- */
+.skill-list, .contact-links ul {
+    list-style-type: none;
     padding-left: 0;
 }
 
-.contact-links li {
-    font-size: 1.2em;
-    margin-bottom: 15px; /* เว้นระยะห่างระหว่างรายการ */
+.skill-list li, .contact-links li {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* เพิ่ม "ติ๊กถูก" สวยๆ หน้า Skill list */
+.skill-list li::before {
+    content: '✓'; /* ไอคอนติ๊กถูก */
+    color: #007bff; /* สีฟ้าสว่าง */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 .contact-links li strong {
-    color: #0056b3; /* สีน้ำเงินเข้ม */
+    color: #004a99;
+}
+
+/* --- 7. ส่วนท้าย (Footer) --- */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #777;
+    font-size: 0.9em;
 }
