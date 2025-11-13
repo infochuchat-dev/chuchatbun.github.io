@@ -34,7 +34,7 @@ h2 {
 
 /* --- 4. เมนูนำทาง (Navigation V2) --- */
 nav {
-    background-color: #ffffff; /* พื้นหลังสีขาว */
+    background-color: #1fb3e0; /* พื้นหลังสีขาว */
     border-radius: 8px;
     margin-bottom: 25px;
     padding: 15px 20px;
@@ -52,12 +52,12 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #e6f0ff; /* สีพื้นหลังฟ้าอ่อนๆ ตอนชี้ */
+    background-color: #d81fb9; /* สีพื้นหลังฟ้าอ่อนๆ ตอนชี้ */
 }
 
 /* --- 5. สไตล์การ์ด (สำหรับ Projects, Skills, etc.) --- */
 section {
-    background-color: #ffffff; /* พื้นหลังสีขาว */
+    background-color: #79e222; /* พื้นหลังสีขาว */
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 20px;
