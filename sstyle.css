@@ -70,3 +70,19 @@ nav a:hover {
     margin-bottom: 8px; /* เว้นระยะห่างระหว่างทักษะ */
     font-size: 1.1em;
 }
+/*
+ * สไตล์สำหรับหน้าติดต่อ (Contact)
+ */
+.contact-links ul {
+    list-style-type: none; /* เอาหัวข้อยวงกลมออก */
+    padding-left: 0;
+}
+
+.contact-links li {
+    font-size: 1.2em;
+    margin-bottom: 15px; /* เว้นระยะห่างระหว่างรายการ */
+}
+
+.contact-links li strong {
+    color: #0056b3; /* สีน้ำเงินเข้ม */
+}
