@@ -3,49 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - ชูชาติ บุญแก้วศรี</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ชูชาติ บุญแก้วศรี - Portfolio & Resume</title>
+    
+    <!-- 
+      CSS ทั้งหมดถูกรวมไว้ที่นี่แล้ว
+      (นี่คือดีไซน์ V2 ที่เราคุยกันครับ)
+    -->
+    <style>
+        /* ==== CSS Version 2: Professional Upgrade ==== */
+
+        /* --- 1. การตั้งค่าโดยรวม (Global Settings) --- */
+        html {
+            scroll-behavior: smooth; /* ทำให้การคลิกเมนูเป็นการเลื่อน (Smooth Scroll) */
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', 'Noto Sans Thai', sans-serif;
+            line-height: 1.7;
+            background-color: #f7f9fc; /* สีพื้นหลังเทาอ่อนๆ */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- 2. การจัดเลย์เอาต์หลัก (Main Container) --- */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* --- 3. การตั้งค่าหัวข้อ (Headings) --- */
+        h1, h2, h3 {
+            color: #004a99; /* สีน้ำเงินเข้ม (โทนใหม่) */
+        }
+
+        h1 {
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 40px; /* เว้นระยะห่างระหว่าง Section */
+        }
+
+        /* --- 4. เมนูนำทาง (Navigation V2) --- */
+        nav {
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: sticky; /* ทำให้เมนู "ลอย" ตามหน้าจอ */
+            top: 10px;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #e6f0ff;
+        }
+
+        /* --- 5. สไตล์การ์ด (สำหรับทุก Section) --- */
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            scroll-margin-top: 80px; /* กันเมนูบังหัวข้อเวลาเลื่อน */
+        }
+
+        /* --- 6. สไตล์สำหรับหน้าผลงาน (Projects) --- */
+        .project-card h3 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        /* --- 7. สไตล์สำหรับหน้าทักษะ (Skills) --- */
+        .skill-category h3 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        .skill-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .skill-list li {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .skill-list li::before {
+            content: '✓'; /* ไอคอนติ๊กถูก */
+            color: #007bff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- 8. สไตล์สำหรับหน้าติดต่อ (Contact) --- */
+        .contact-links ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .contact-links li {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .contact-links li strong {
+            color: #004a99;
+        }
+
+        /* --- 9. ส่วนท้าย (Footer) --- */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">หน้าแรก</a>
-        <a href="about.html">เกี่ยวกับฉัน</a>
-        <a href="projects.html">ผลงาน</a>
-        <a href="skills.html">ทักษะ</a>
-        <a href="contact.html">ติดต่อ</a>
-    </nav>
-    <div class="container">
-    <header>
-        <h1>ชูชาติ บุญแก้วศรี (Chuchat Bunkeawsri)</h1>
-        <h2>Project Manager | Technical Sales | M.S. IT Graduate</h2>
-        
-        <p>
-            ผู้เชี่ยวชาญด้านการบริหารโครงการและจัดหาสถานที่ (Project Management & Site Acquisition) 
-            ที่มีประสบการณ์กว่า 7 ปีในอุตสาหกรรมโทรคมนาคมและเทคโนโลยีสารสนเทศ 
-            เชี่ยวชาญในการเจรจาต่อรอง, การประสานงานกับหน่วยงานราชการ, และการบริหารโครงการ 3G/4G 
-            ผสานทักษะด้านการขายเชิงเทคนิค (Technical Sales) ที่สร้างยอดขายรวมกว่า 44.73 ล้านบาท 
-            พร้อมด้วยวุฒิปริญญาโทด้านเทคโนโลยีสารสนเทศ  
-            มุ่งมั่นในการนำความรู้และประสบการณ์มาขับเคลื่อนโครงการให้สำเร็จลุล่วงอย่างมีประสิทธิภาพ
-        </p>
-    </header>
 
-    <section>
-        <h3>จุดเด่นของผม</h3>
-        <ul>
-            <li>
-                <strong>Project Management:</strong> ประสบการณ์ 7+ ปี ด้าน Site Acquisition และบริหารโครงการโทรคมนาคม
-            </li>
-            <li>
-                <strong>Technical Sales:</strong> สร้างยอดขาย 44.73 ล้านบาท บริหาร 203 โครงการ และลูกค้ากว่า 61 ราย
-            </li>
-            <li>
-                <strong>IT & Data Skills:</strong> จบ ป.โท IT (เกรด 3.72) เชี่ยวชาญ Python, Data Science และ Network Security
-            </li>
-        </ul>
-    </section>
-    </div>
+    <!-- เมนูนำทาง (เวอร์ชันสมบูรณ์) -->
+    <nav>
+        <a href="#home">หน้าแรก</a>
+        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#experience">ประสบการณ์</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#projects">ผลงาน</a>
+        <a href="#contact">ติดต่อ</a>
+    </nav>
+
+    <!-- เราจะใช้ .container ครอบเนื้อหาทั้งหมด -->
+    <div class="container">
+
+        <!-- ======== 1. HOME (Hero Section) ======== -->
+        <section id="home">
+            <header>
+                <h1>ชูชาติ บุญแก้วศรี (Chuchat Bunkeawsri)</h1>
+                <h2>Project Manager | Technical Sales | M.S. IT Graduate</h2>
+                <p>
+                    ผู้เชี่ยวชาญด้านการบริหารโครงการและจัดหาสถานที่ (Project Management & Site Acquisition) 
+                    ที่มีประสบการณ์กว่า 7 ปีในอุตสาหกรรมโทรคมนาคมและเทคโนโลยีสารสนเทศ 
+                    เชี่ยวชาญในการเจรจาต่อรอง, การประสานงานกับหน่วยงานราชการ, และการบริหารโครงการ 3G/4G 
+                    ผสานทักษะด้านการขายเชิงเทคนิค (Technical Sales) ที่สร้างยอดขายรวมกว่า 44.73 ล้านบาท 
+                    พร้อมด้วยวุฒิปริญญาโทด้านเทคโนโลยีสารสนเทศ (เกรดเฉลี่ย 3.72) 
+                    มุ่งมั่นในการนำความรู้และประสบการณ์มาขับเคลื่อนโครงการให้สำเร็จลุล่วงอย่างมีประสิทธิภาพ
+                </p>
+            </header>
+        </section>
+        
+        <!-- ======== 2. ABOUT ME ======== -->
+        <section id="about">
+            <h2>เกี่ยวกับฉัน (About Me)</h2>
+            <h3>เรื่องราวของผม (My Story)</h3>
+            <p>
+                ด้วยประสบการณ์กว่า 7 ปีในงานบริหารโครงการและ Site Acquisition ในอุตสาหกรรมโทรคมนาคม 
+                ผมได้เห็นถึงความสำคัญของเทคโนโลยีที่เปลี่ยนแปลงการทำงานอยู่เสมอ 
+                ผมจึงตัดสินใจเรียนต่อปริญญาโทด้านเทคโนโลยีสารสนเทศ (IT) 
+                เพื่อเพิ่มพูนทักษะด้านการวิเคราะห์ข้อมูล, Python, และความปลอดภัยทางไซเบอร์ 
+                ตอนนี้ผมพร้อมที่จะผสานประสบการณ์ภาคสนามที่แข็งแกร่ง เข้ากับทักษะทางเทคนิคที่ทันสมัย 
+                เพื่อขับเคลื่อนโครงการให้สำเร็จอย่างมีประสิทธิภาพสูงสุด
+            </p>
+            <h3>การศึกษา (Education)</h3>
+            <h4>วิทยาศาสตรมหาบัณฑิต (เทคโนโลยีสารสนเทศ) - GPAX: 3.72</h4>
+            <p>มหาวิทยาลัยธุรกิจบัณฑิตย์ (ปี 2566 - 2567)</p>
+            <ul>
+                <li>การใช้ภาษาไพธอนเพื่อการวิเคราะห์ข้อมูล</li>
+                <li>วิทยาการข้อมูล (Data Science)</li>
+                <li>เทคโนโลยีด้านความมั่นคงสำหรับองค์กรฯ</li>
+                <li>การพัฒนาแอปพลิเคชัน</li>
+                <li>การบริหารระบบเครือข่ายและโครงสร้างพื้นฐานฯ</li>
+            </ul>
+            <h4>บริหารธุรกิจบัณฑิต (การจัดการ)</h4>
+            <p>มหาวิทยาลัยราชภัฏนครศรีธรรมราช</p>
+        </section>
+
+        <!-- ======== 3. EXPERIENCE ======== -->
+        <section id="experience">
+            <h2>ประสบการณ์การทำงาน (Work Experience)</h2>
+            
+            <div class="job-card">
+                <h4>Sales & Project Manager | บริษัท จ๊อบ เอ็นเตอร์ไพรส์ จำกัด</h4>
+                <p><em>(พฤษภาคม 2019 - ปัจจุบัน)</em></p>
+                <ul>
+                    <li>สร้างยอดขายรวม <strong>44.73 ล้านบาท</strong> จากการบริหารโครงการขายสินค้า IT (ข้อมูลปี 2019-2025)</li>
+                    <li>บริหารจัดการและปิดการขายสำเร็จกว่า <strong>203 โครงการ</strong> และขยายฐานลูกค้าใหม่กว่า <strong>61 ราย</strong></li>
+                    <li>ผลักดันยอดขายสูงสุดในปี 2564 (ค.ศ. 2021) ที่มูลค่า <strong>13.98 ล้านบาท</strong></li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <h4>Site Acquisition Specialist | Outsource DTAC</h4>
+                <p><em>(มีนาคม 2017 - พฤษภาคม 2018)</em></p>
+                <ul>
+                    <li>เจรจาต่อรองอัตราค่าเช่าพื้นที่ และประสานงานกับเจ้าของกรรมสิทธิ์ที่ดิน/อาคารเพื่อสร้างสถานีฐาน</li>
+                    <li>ประสานงานหน่วยงานราชการ (กรมธนารักษ์, ส.ป.ก.) เพื่อขออนุญาตดำเนินการ</li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <h4>Project Manager | บริษัท ณัฐรัชการค้า จำกัด</h4>
+                <p><em>(พฤษภาคม 2012 - เมษายน 2017)</em></p>
+                <ul>
+                    <li><strong>Site Acquisition:</strong> นำทีมสรรหาพื้นที่, เจรจาต่อรองค่าเช่า</li>
+                    <li><strong>Civil Work:</strong> ควบคุมงานก่อสร้าง และประสานงานขออนุญาต สำหรับโครงการ New Site / Relocate ของ DTAC</li>
+                    <li><strong>3G/4G Project:</strong> บริหารโครงการ 3G/4G (Commissioning, Site Integration)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ======== 4. SKILLS ======== -->
+        <section id="skills" class="skill-category">
+            <h2>ทักษะและความสามารถ (Skills)</h2>
+            
+            <h3>Hard Skills (ทักษะทางเทคนิค)</h3>
+            <ul class="skill-list">
+                <li>การบริหารโครงการ (Project Management)</li>
+                <li>การจัดหาสถานที่ (Site Acquisition)</li>
+                <li>การเจรจาต่อรอง (Negotiation)</li>
+                <li>การใช้ภาษา Python เพื่อวิเคราะห์ข้อมูล</li>
+                <li>การบริหารระบบเครือข่ายและ IT Security</li>
+                <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+            </ul>
+
+            <h3>Soft Skills (ทักษะทั่วไป)</h3>
+            <ul class="skill-list">
+                <li>ภาวะผู้นำ (Leadership)</li>
+                <li>การทำงานเป็นทีม (Teamwork)</li>
+                <li>การแก้ปัญหา (Problem-Solving)</li>
+                <li>การทำงานภายใต้แรงกดดัน</li>
+                <li>มนุษยสัมพันธ์และการสื่อสาร</li>
+            </ul>
+        </section>
+
+        <!-- ======== 5. PROJECTS ======== -->
+        <section id="projects">
+            <h2>ผลงาน (Projects)</h2>
+            <p>นี่คือโปรเจกต์ที่ผมสร้างขึ้นเพื่อพิสูจน์ทักษะทางเทคโนโลยีที่ได้เรียนมา</p>
+            
+            <div class="project-card">
+                <h3>Project 1: การวิเคราะห์ข้อมูลยอดขาย 44 ล้านบาท (Sales Data Analysis)</h3>
+                <p>
+                    ใช้ข้อมูลยอดขายจริง (จากไฟล์ Excel) กว่า 203 รายการ มาวิเคราะห์ด้วยภาษา Python 
+                    (โดยใช้ไลบรารี Pandas และ Matplotlib) เพื่อค้นหาแนวโน้มยอดขายรายปี, 
+                    ลูกค้ารายสำคัญ, และประเภทสินค้าที่ขายดีที่สุด
+                </p>
+                <p><strong>ทักษะที่พิสูจน์:</strong> Python, Pandas (Data Analysis), Matplotlib (Data Visualization)</p>
+                <!-- 
+                  หมายเหตุ: ในอนาคต เมื่อคุณอัปโหลดโค้ด Python ขึ้น GitHub 
+                  เราจะสร้างลิงก์ "ดูโค้ดบน GitHub" ตรงนี้ครับ
+                -->
+            </div>
+
+            <div class="project-card">
+                <h3>Project 2: เว็บไซต์พอร์ตโฟลิโอนี้ (This Portfolio Website)</h3>
+                <p>
+                    เว็บไซต์นี้สร้างขึ้นด้วยตัวเองทั้งหมดโดยไม่ใช้ Template สำเร็จรูป 
+                    เพื่อพิสูจน์ทักษะการพัฒนาเว็บขั้นพื้นฐาน (Front-End) 
+                    และบริหารจัดการโค้ดด้วย Git และ GitHub
+                </p>
+                <p><strong>ทักษะที่พิสูจน์:</strong> HTML5, CSS3, Git, GitHub Pages</p>
+                <p>
+                    <a href="https://github.com/infochuchat-dev/chuchatbun.github.io" target="_blank">
+                        คลิกที่นี่เพื่อดู Source Code ทั้งหมดบน GitHub
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ======== 6. CONTACT ======== -->
+        <section id="contact" class="contact-links">
+            <h2>ติดต่อ (Contact)</h2>
+            <p>คุณสามารถติดต่อผมได้ผ่านช่องทางด้านล่างนี้</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:Chuchat_b@outlook.co.th">Chuchat_b@outlook.co.th</a></li>
+                <li><strong>Phone:</strong> 083-507-XXXX (กรุณาติดต่อผ่านอีเมลก่อน)</li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/infochuchat-dev" target="_blank">infochuchat-dev</a></li>
+                <!-- <li><strong>LinkedIn:</strong> <a href="[ลิงก์ LinkedIn]" target="_blank">(โปรไฟล์ LinkedIn)</a></li> -->
+            </ul>
+        </section>
+
+    </div> <!-- ปิด .container -->
+
+    <!-- ======== FOOTER ======== -->
     <footer>
         <p>© 2025 ชูชาติ บุญแก้วศรี | สร้างสรรค์ด้วยความมุ่งมั่น</p>
     </footer>
+
 </body>
 </html>
