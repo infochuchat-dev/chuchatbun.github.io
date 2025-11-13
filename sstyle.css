@@ -34,3 +34,18 @@ nav a {
 nav a:hover {
     background-color: #ddd;
 }
+/*
+ * สไตล์สำหรับหน้าผลงาน (Projects)
+ */
+.project-card {
+    background-color: #f9f9f9; /* สีพื้นหลังเทาอ่อน */
+    border: 1px solid #ddd;     /* เส้นขอบเทา */
+    border-radius: 8px;       /* ทำให้ขอบมน */
+    padding: 20px;
+    margin-bottom: 20px;      /* เว้นระยะห่างระหว่างโปรเจกต์ */
+}
+
+.project-card h3 {
+    color: #0056b3; /* สีเดียวกับ h1 */
+    margin-top: 0;
+}
